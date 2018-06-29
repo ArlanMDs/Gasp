@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.PrestadorMainActivity">
+
+    <TextView
+        android:id="@+id/textView24"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="PRESTADOR"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/BUTTON_PRESTADOR_CADASTRAR_SERVICO"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="72dp"
+        android:text="CADASTRAR SERVIÇO"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView24" />
+
+    <Button
+        android:id="@+id/BUTTON_PRESTADOR_CADASTRAR_FUNCIONARIO"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Cadastrar Funcionário"
+        app:layout_constraintEnd_toEndOf="@+id/BUTTON_PRESTADOR_CADASTRAR_SERVICO"
+        app:layout_constraintStart_toStartOf="@+id/BUTTON_PRESTADOR_CADASTRAR_SERVICO"
+        app:layout_constraintTop_toBottomOf="@+id/BUTTON_PRESTADOR_CADASTRAR_SERVICO" />
+
+    <Button
+        android:id="@+id/BUTTON_PRESTADOR_LISTAR_SERVICOS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Listar Serviços"
+        app:layout_constraintEnd_toEndOf="@+id/BUTTON_PRESTADOR_CADASTRAR_FUNCIONARIO"
+        app:layout_constraintStart_toStartOf="@+id/BUTTON_PRESTADOR_CADASTRAR_FUNCIONARIO"
+        app:layout_constraintTop_toBottomOf="@+id/BUTTON_PRESTADOR_CADASTRAR_FUNCIONARIO" />
+
+    <Button
+        android:id="@+id/BUTTON_PRESTADOR_VOLTAR"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="130dp"
+        android:text="voltar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/BUTTON_PRESTADOR_LISTAR_SERVICOS" />
+</android.support.constraint.ConstraintLayout>
