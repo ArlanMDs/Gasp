@@ -9,25 +9,25 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.MainActivity">
+        <activity android:name=".activities.MainActivity"
+            android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.SelecionarTipoActivity" />
         <activity android:name=".activities.CadastrarUsuarioActivity" />
         <activity android:name=".activities.LoginActivity" />
-        <activity android:name=".activities.ClienteMainActivity" />
-        <activity android:name=".activities.ServicosAbertosActivity" />
-        <activity android:name=".activities.ServicoStatusActivity" />
-        <activity android:name=".activities.ServicosFinalizadosActivity" />
-        <activity android:name=".activities.PrestadorMainActivity" />
-        <activity android:name=".activities.CadastrarServicoActivity" />
-        <activity android:name=".activities.CadastrarFuncionarioActivity" />
-        <activity android:name=".activities.ListarServicosActivity" />
-        <activity android:name=".activities.ModificarServicoActivity"></activity>
+        <activity android:name=".cliente_activities.ClienteMainActivity" />
+        <activity android:name=".cliente_activities.ServicosAbertosActivity" />
+        <activity android:name=".cliente_activities.ServicoStatusActivity" />
+        <activity android:name=".cliente_activities.ServicosFinalizadosActivity" />
+        <activity android:name=".prestador_activities.PrestadorMainActivity" />
+        <activity android:name=".prestador_activities.CadastrarServicoActivity" />
+        <activity android:name=".prestador_activities.CadastrarFuncionarioActivity" />
+        <activity android:name=".prestador_activities.ListarServicosActivity" />
+        <activity android:name=".prestador_activities.ModificarServicoActivity"/>
     </application>
 
 </manifest>

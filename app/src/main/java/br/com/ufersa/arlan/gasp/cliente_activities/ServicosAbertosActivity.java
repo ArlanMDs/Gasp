@@ -1,15 +1,15 @@
-package br.com.ufersa.arlan.gasp.activities;
+package br.com.ufersa.arlan.gasp.cliente_activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import br.com.ufersa.arlan.gasp.R;
 
-public class ListarServicosActivity extends AppCompatActivity {
+public class ServicosAbertosActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_listar_servicos);
+        setContentView(R.layout.activity_servicos_abertos);
     }
 }

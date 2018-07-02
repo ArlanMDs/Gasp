@@ -35,17 +35,15 @@
             android:id="@+id/textView6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:text="Nome"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView4" />
+            app:layout_constraintStart_toStartOf="@+id/spinner"
+            app:layout_constraintTop_toBottomOf="@+id/spinner" />
 
         <EditText
             android:id="@+id/CADASTRAR_USUARIO_NAME"
             android:layout_width="wrap_content"
-            android:layout_height="30dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:ems="10"
             android:inputType="textPersonName"
@@ -58,13 +56,13 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="Telefone"
-            app:layout_constraintTop_toBottomOf="@+id/CADASTRO_USUARIO_CPF"
-            tools:layout_editor_absoluteX="8dp" />
+            app:layout_constraintStart_toStartOf="@+id/CADASTRO_USUARIO_CPF"
+            app:layout_constraintTop_toBottomOf="@+id/CADASTRO_USUARIO_CPF" />
 
         <EditText
             android:id="@+id/CADASTRAR_USUARIO_ESPECIALIDADE"
             android:layout_width="wrap_content"
-            android:layout_height="30dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:ems="10"
             android:inputType="phone"
@@ -83,7 +81,7 @@
         <EditText
             android:id="@+id/CADASTAR_USUARIO_EMAIL"
             android:layout_width="wrap_content"
-            android:layout_height="30dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:ems="10"
             android:inputType="textEmailAddress"
@@ -102,7 +100,7 @@
         <EditText
             android:id="@+id/CADASTRO_USUARIO_SENHA"
             android:layout_width="wrap_content"
-            android:layout_height="30dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:ems="10"
             android:inputType="textPassword"
@@ -121,7 +119,7 @@
         <EditText
             android:id="@+id/CADASTRO_USUARIO_CONFIRMAR_SENHA"
             android:layout_width="wrap_content"
-            android:layout_height="30dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:ems="10"
             android:inputType="textPassword"
@@ -168,11 +166,31 @@
         <EditText
             android:id="@+id/CADASTRO_USUARIO_CPF"
             android:layout_width="wrap_content"
-            android:layout_height="30dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:ems="10"
             android:inputType="numberSigned"
             app:layout_constraintStart_toStartOf="@+id/textView25"
             app:layout_constraintTop_toBottomOf="@+id/textView25" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:text="Tipo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:entries="@array/tipo"
+            app:layout_constraintStart_toStartOf="@+id/textView2"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
     </android.support.constraint.ConstraintLayout>
 </ScrollView>

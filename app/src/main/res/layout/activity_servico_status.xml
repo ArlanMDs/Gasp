@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.ServicoStatusActivity">
+    tools:context=".cliente_activities.ServicoStatusActivity">
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
@@ -100,7 +100,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textView21" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/CONFIRMA_STATUS_SERVICO"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="148dp"
@@ -114,7 +114,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textView22" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/CANCELAR_STATUS_SERVICO"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
@@ -123,13 +123,13 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:text="Cancelar serviço"
-            app:layout_constraintEnd_toEndOf="@+id/button"
-            app:layout_constraintStart_toStartOf="@+id/button"
-            app:layout_constraintTop_toBottomOf="@+id/button" />
+            app:layout_constraintEnd_toEndOf="@+id/CONFIRMA_STATUS_SERVICO"
+            app:layout_constraintStart_toStartOf="@+id/CONFIRMA_STATUS_SERVICO"
+            app:layout_constraintTop_toBottomOf="@+id/CONFIRMA_STATUS_SERVICO" />
 
         <Button
-            android:id="@+id/button3"
-            android:layout_width="wrap_content"
+            android:id="@+id/STATUS_VOLTAR"
+            android:layout_width="88dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:layout_marginLeft="8dp"
@@ -137,9 +137,9 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:text="Voltar"
-            app:layout_constraintEnd_toEndOf="@+id/button2"
-            app:layout_constraintStart_toStartOf="@+id/button2"
-            app:layout_constraintTop_toBottomOf="@+id/button2" />
+            app:layout_constraintEnd_toEndOf="@+id/CANCELAR_STATUS_SERVICO"
+            app:layout_constraintStart_toStartOf="@+id/CANCELAR_STATUS_SERVICO"
+            app:layout_constraintTop_toBottomOf="@+id/CANCELAR_STATUS_SERVICO" />
 
         <TextView
             android:id="@+id/STATUS_SERVICO"
