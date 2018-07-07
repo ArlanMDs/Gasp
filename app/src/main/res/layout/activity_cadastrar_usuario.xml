@@ -7,14 +7,15 @@
     tools:context=".activities.CadastrarUsuarioActivity">
 
     <android.support.constraint.ConstraintLayout
-        android:layout_width="368dp"
-        android:layout_height="426dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp">
+        android:layout_marginTop="8dp"
+        android:padding="5dp">
 
         <TextView
             android:id="@+id/textView4"
@@ -36,9 +37,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="Nome"
-            app:layout_constraintStart_toStartOf="@+id/spinner"
-            app:layout_constraintTop_toBottomOf="@+id/spinner" />
+            android:text="Nome*"
+            app:layout_constraintStart_toStartOf="@+id/CADASTRAR_USUARIO_SPINNER"
+            app:layout_constraintTop_toBottomOf="@+id/CADASTRAR_USUARIO_SPINNER" />
 
         <EditText
             android:id="@+id/CADASTRAR_USUARIO_NAME"
@@ -56,11 +57,11 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="Telefone"
-            app:layout_constraintStart_toStartOf="@+id/CADASTRO_USUARIO_CPF"
-            app:layout_constraintTop_toBottomOf="@+id/CADASTRO_USUARIO_CPF" />
+            app:layout_constraintStart_toStartOf="@+id/CADASTRAR_USUARIO_CPF"
+            app:layout_constraintTop_toBottomOf="@+id/CADASTRAR_USUARIO_CPF" />
 
         <EditText
-            android:id="@+id/CADASTRAR_USUARIO_ESPECIALIDADE"
+            android:id="@+id/CADASTRAR_USUARIO_TELEFONE"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -74,9 +75,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="E-mail"
-            app:layout_constraintStart_toStartOf="@+id/CADASTRAR_USUARIO_ESPECIALIDADE"
-            app:layout_constraintTop_toBottomOf="@+id/CADASTRAR_USUARIO_ESPECIALIDADE" />
+            android:text="E-mail*"
+            app:layout_constraintStart_toStartOf="@+id/CADASTRAR_USUARIO_TELEFONE"
+            app:layout_constraintTop_toBottomOf="@+id/CADASTRAR_USUARIO_TELEFONE" />
 
         <EditText
             android:id="@+id/CADASTAR_USUARIO_EMAIL"
@@ -93,12 +94,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="Senha"
+            android:text="Senha*"
             app:layout_constraintStart_toStartOf="@+id/CADASTAR_USUARIO_EMAIL"
             app:layout_constraintTop_toBottomOf="@+id/CADASTAR_USUARIO_EMAIL" />
 
         <EditText
-            android:id="@+id/CADASTRO_USUARIO_SENHA"
+            android:id="@+id/CADASTRAR_USUARIO_SENHA"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -112,12 +113,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="Confirmar Senha"
-            app:layout_constraintStart_toStartOf="@+id/CADASTRO_USUARIO_SENHA"
-            app:layout_constraintTop_toBottomOf="@+id/CADASTRO_USUARIO_SENHA" />
+            android:text="Confirmar Senha*"
+            app:layout_constraintStart_toStartOf="@+id/CADASTRAR_USUARIO_SENHA"
+            app:layout_constraintTop_toBottomOf="@+id/CADASTRAR_USUARIO_SENHA" />
 
         <EditText
-            android:id="@+id/CADASTRO_USUARIO_CONFIRMAR_SENHA"
+            android:id="@+id/CADASTRAR_USUARIO_CONFIRMAR_SENHA"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -128,7 +129,7 @@
 
         <Button
             android:id="@+id/CADASTRAR_USUARIO_CONFIRMAR"
-            android:layout_width="wrap_content"
+            android:layout_width="352dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:layout_marginLeft="8dp"
@@ -138,40 +139,40 @@
             android:text="Cadastrar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/CADASTRO_USUARIO_CONFIRMAR_SENHA" />
+            app:layout_constraintTop_toBottomOf="@+id/CADASTRAR_USUARIO_CONFIRMAR_SENHA" />
 
         <Button
             android:id="@+id/CADASTRAR_USUARIO_VOLTAR"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_marginBottom="8dp"
             android:layout_marginEnd="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
             android:text="voltar"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/CADASTRAR_USUARIO_CONFIRMAR"
             app:layout_constraintStart_toStartOf="@+id/CADASTRAR_USUARIO_CONFIRMAR"
             app:layout_constraintTop_toBottomOf="@+id/CADASTRAR_USUARIO_CONFIRMAR" />
 
         <TextView
-            android:id="@+id/textView25"
+            android:id="@+id/CADASTRAR_USUARIO_CPF_TEXTVIEW"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="CPF"
+            android:text="CPF*"
             app:layout_constraintStart_toStartOf="@+id/CADASTRAR_USUARIO_NAME"
             app:layout_constraintTop_toBottomOf="@+id/CADASTRAR_USUARIO_NAME" />
 
         <EditText
-            android:id="@+id/CADASTRO_USUARIO_CPF"
+            android:id="@+id/CADASTRAR_USUARIO_CPF"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:ems="10"
             android:inputType="numberSigned"
-            app:layout_constraintStart_toStartOf="@+id/textView25"
-            app:layout_constraintTop_toBottomOf="@+id/textView25" />
+            app:layout_constraintStart_toStartOf="@+id/CADASTRAR_USUARIO_CPF_TEXTVIEW"
+            app:layout_constraintTop_toBottomOf="@+id/CADASTRAR_USUARIO_CPF_TEXTVIEW" />
 
         <TextView
             android:id="@+id/textView2"
@@ -180,13 +181,13 @@
             android:layout_marginLeft="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="16dp"
-            android:text="Tipo"
+            android:text="Tipo*"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
         <Spinner
-            android:id="@+id/spinner"
-            android:layout_width="wrap_content"
+            android:id="@+id/CADASTRAR_USUARIO_SPINNER"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:entries="@array/tipo"
