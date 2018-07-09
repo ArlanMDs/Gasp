@@ -25,8 +25,6 @@ public class CadastrarUsuarioActivity extends AppCompatActivity {
 
     @BindView(R.id.CADASTRAR_USUARIO_NAME)
     EditText CADASTRARUSUARIONAME;
-    @BindView(R.id.CADASTRAR_USUARIO_TELEFONE)
-    EditText CADASTRARUSUARIOTELEFONE;
     @BindView(R.id.CADASTAR_USUARIO_EMAIL)
     EditText CADASTARUSUARIOEMAIL;
     @BindView(R.id.CADASTRAR_USUARIO_SENHA)
@@ -71,7 +69,6 @@ public class CadastrarUsuarioActivity extends AppCompatActivity {
                     usuario.setEmail(String.valueOf(CADASTARUSUARIOEMAIL.getText()));
                     usuario.setNome(String.valueOf(CADASTRARUSUARIONAME.getText()));
                     usuario.setSenha(String.valueOf(CADASTRARUSUARIOSENHA.getText()));
-                    usuario.setTipo(CADASTRARUSUARIOSPINNER.getSelectedItemPosition());
 
                     new AsyncInsert().execute();
                 }
@@ -156,6 +153,7 @@ public class CadastrarUsuarioActivity extends AppCompatActivity {
             super.onPostExecute(aVoid);
 
             Toast.makeText(CadastrarUsuarioActivity.this, "Usuário cadastrado.", Toast.LENGTH_SHORT).show();
+            finish();
         }
     }
 }
