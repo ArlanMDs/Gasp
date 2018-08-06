@@ -13,6 +13,7 @@ public class Usuario {
     private String nome;
     private String email;
     private String senha;
+    private String telefone;
    // Se o cadastro for feito usando o CPF, o usuário é cliente. Se usar o CNPJ, é  prestador
 
     public int getId() {
@@ -63,4 +64,11 @@ public class Usuario {
         this.senha = senha;
     }
 
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
 }

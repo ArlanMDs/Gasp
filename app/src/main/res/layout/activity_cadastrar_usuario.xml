@@ -51,6 +51,16 @@
             app:layout_constraintStart_toStartOf="@+id/textView6"
             app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
+        <EditText
+            android:id="@+id/CADASTRAR_USUARIO_TELEFONE"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:inputType="phone"
+            app:layout_constraintStart_toStartOf="@+id/textView32"
+            app:layout_constraintTop_toBottomOf="@+id/textView32" />
+
         <TextView
             android:id="@+id/textView8"
             android:layout_width="wrap_content"
@@ -58,7 +68,7 @@
             android:layout_marginTop="8dp"
             android:text="E-mail*"
             app:layout_constraintStart_toStartOf="@+id/CADASTRAR_USUARIO_CPF"
-            app:layout_constraintTop_toBottomOf="@+id/CADASTRAR_USUARIO_CPF" />
+            app:layout_constraintTop_toBottomOf="@+id/CADASTRAR_USUARIO_TELEFONE" />
 
         <EditText
             android:id="@+id/CADASTAR_USUARIO_EMAIL"
@@ -174,5 +184,14 @@
             android:entries="@array/tipo"
             app:layout_constraintStart_toStartOf="@+id/textView2"
             app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+        <TextView
+            android:id="@+id/textView32"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Telefone"
+            app:layout_constraintStart_toStartOf="@+id/CADASTRAR_USUARIO_NAME"
+            app:layout_constraintTop_toBottomOf="@+id/CADASTRAR_USUARIO_CPF" />
     </android.support.constraint.ConstraintLayout>
 </ScrollView>

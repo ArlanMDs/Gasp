@@ -9,7 +9,7 @@ import br.com.ufersa.arlan.gasp.beans.Servico;
 import br.com.ufersa.arlan.gasp.beans.Usuario;
 
 
-@Database(entities = {Usuario.class, Servico.class}, version = 1)
+@Database(entities = {Usuario.class, Servico.class}, version = 2)
 public abstract class AppDatabase extends RoomDatabase {
 
     private static final String DB_NAME = "appDatabase.db";

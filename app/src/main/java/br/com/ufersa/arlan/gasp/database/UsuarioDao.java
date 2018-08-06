@@ -20,6 +20,8 @@ public interface UsuarioDao {
     @Query("SELECT * FROM usuario WHERE email = :email AND senha = :senha LIMIT 1")
     public Usuario getUser(String email, String senha);
 
+    @Query("SELECT * FROM usuario WHERE cpf = :cpf LIMIT 1")
+    public Usuario getUserByCpf(String cpf);
 
     @Insert
     void insertAll(List<Usuario> usuarios);

@@ -7,4 +7,16 @@
 
     </string-array>
 
+    <string-array name="status" translatable="false">
+        <item>Avaliação</item>
+        <item>Conserto</item>
+        <item>Aguardando confirmação do cliente</item>
+        <item>Finalizado</item>
+
+    </string-array>
+    <string name="avaliacao">Avaliação</string>
+    <string name="conserto">Conserto</string>
+    <string name="aguardando">Aguardando confirmação do cliente</string>
+    <string name="finalizado">Finalizado</string>
+
 </resources>

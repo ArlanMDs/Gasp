@@ -15,8 +15,11 @@ public class Servico {
     private String status;
     private String descricao;
     private double valor;
-    private String cliente;
-    private String prestador;
+    private String clienteNome;
+    private String clienteCPF;
+    private String prestadorNome;
+    private String prestadorCNPJ;
+
 
     public int getId() {
         return id;
@@ -82,19 +85,35 @@ public class Servico {
         this.valor = valor;
     }
 
-    public String getCliente() {
-        return cliente;
+    public String getClienteNome() {
+        return clienteNome;
     }
 
-    public void setCliente(String cliente) {
-        this.cliente = cliente;
+    public void setClienteNome(String cliente) {
+        this.clienteNome = cliente;
     }
 
-    public String getPrestador() {
-        return prestador;
+    public String getPrestadorNome() {
+        return prestadorNome;
     }
 
-    public void setPrestador(String prestador) {
-        this.prestador = prestador;
+    public void setPrestadorNome(String prestador) {
+        this.prestadorNome = prestador;
+    }
+
+    public String getClienteCPF() {
+        return clienteCPF;
+    }
+
+    public void setClienteCPF(String clienteCPF) {
+        this.clienteCPF = clienteCPF;
+    }
+
+    public String getPrestadorCNPJ() {
+        return prestadorCNPJ;
+    }
+
+    public void setPrestadorCNPJ(String prestadorCNPJ) {
+        this.prestadorCNPJ = prestadorCNPJ;
     }
 }

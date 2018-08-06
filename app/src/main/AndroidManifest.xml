@@ -25,7 +25,6 @@
         <activity android:name=".cliente_activities.ServicosFinalizadosActivity" />
         <activity android:name=".prestador_activities.PrestadorMainActivity" />
         <activity android:name=".prestador_activities.CadastrarServicoActivity" />
-        <activity android:name=".prestador_activities.CadastrarFuncionarioActivity" />
         <activity android:name=".prestador_activities.ListarServicosActivity" />
         <activity android:name=".prestador_activities.ModificarServicoActivity"/>
     </application>

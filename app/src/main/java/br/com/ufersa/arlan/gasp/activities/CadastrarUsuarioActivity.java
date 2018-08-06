@@ -3,7 +3,6 @@ package br.com.ufersa.arlan.gasp.activities;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.text.TextUtils;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.EditText;
@@ -37,6 +36,8 @@ public class CadastrarUsuarioActivity extends AppCompatActivity {
     TextView CADASTRARUSUARIOCPFTEXTVIEW;
     @BindView(R.id.CADASTRAR_USUARIO_SPINNER)
     Spinner CADASTRARUSUARIOSPINNER;
+    @BindView(R.id.CADASTRAR_USUARIO_TELEFONE)
+    EditText CADASTRARUSUARIOTELEFONE;
 
     private AppDatabase appDatabase;
     private Usuario usuario;
@@ -57,7 +58,7 @@ public class CadastrarUsuarioActivity extends AppCompatActivity {
         switch (view.getId()) {
             case R.id.CADASTRAR_USUARIO_CONFIRMAR:
 
-                if(validaDados()) {
+                if (validaDados()) {
                     // Os dados estão ok. pronto para criar o objeto e inserir no banco
 
                     if (CADASTRARUSUARIOSPINNER.getSelectedItemPosition() == 0) // é cliente
@@ -69,6 +70,7 @@ public class CadastrarUsuarioActivity extends AppCompatActivity {
                     usuario.setEmail(String.valueOf(CADASTARUSUARIOEMAIL.getText()));
                     usuario.setNome(String.valueOf(CADASTRARUSUARIONAME.getText()));
                     usuario.setSenha(String.valueOf(CADASTRARUSUARIOSENHA.getText()));
+                    usuario.setTelefone(String.valueOf(CADASTRARUSUARIOTELEFONE.getText()));
 
                     new AsyncInsert().execute();
                 }
@@ -82,33 +84,32 @@ public class CadastrarUsuarioActivity extends AppCompatActivity {
         }
     }
 
-    public boolean validaDados(){
-        if(CADASTRARUSUARIONAME.getText().length() < 5){
+    public boolean validaDados() {
+        if (CADASTRARUSUARIONAME.getText().length() < 5) {
             Toast.makeText(this, "O nome deve conter ao menos 5 caracteres", Toast.LENGTH_SHORT).show();
             return false;
 
-        }else if(CADASTRARUSUARIOSENHA.getText().length() < 5) {
+        } else if (CADASTRARUSUARIOSENHA.getText().length() < 5) {
             Toast.makeText(this, "A senha deve conter ao menos 5 dígitos", Toast.LENGTH_SHORT).show();
             return false;
 
-        }else if(! CADASTRARUSUARIOSENHA.getText().toString().equals(CADASTRARUSUARIOCONFIRMARSENHA.getText().toString())){
+        } else if (!CADASTRARUSUARIOSENHA.getText().toString().equals(CADASTRARUSUARIOCONFIRMARSENHA.getText().toString())) {
             Toast.makeText(this, "As senhas não coincidem", Toast.LENGTH_SHORT).show();
             return false;
 
-        }else if(!isValidEmail(CADASTARUSUARIOEMAIL.getText().toString())){
+        } else if (!isValidEmail(CADASTARUSUARIOEMAIL.getText().toString())) {
             Toast.makeText(this, "E-mail inválido", Toast.LENGTH_SHORT).show();
             return false;
 
-        }else if(CADASTRARUSUARIOSPINNER.getSelectedItemPosition() == 0)
+        } else if (CADASTRARUSUARIOSPINNER.getSelectedItemPosition() == 0)
             if (CADASTRARUSUARIOCPF.getText().length() != 11) {
                 Toast.makeText(this, "O CPF deve conter 11 dígitos", Toast.LENGTH_SHORT).show();
                 return false;
-            }
-        else if(CADASTRARUSUARIOSPINNER.getSelectedItemPosition() == 1)
-            if (CADASTRARUSUARIOCPF.getText().length() != 14){
-                Toast.makeText(this, "O CNPJ deve conter 14 dígitos", Toast.LENGTH_SHORT).show();
-                return false;
-            }
+            } else if (CADASTRARUSUARIOSPINNER.getSelectedItemPosition() == 1)
+                if (CADASTRARUSUARIOCPF.getText().length() != 14) {
+                    Toast.makeText(this, "O CNPJ deve conter 14 dígitos", Toast.LENGTH_SHORT).show();
+                    return false;
+                }
 
         return true;
     }

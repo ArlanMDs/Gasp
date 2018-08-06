@@ -90,8 +90,6 @@ public class LoginActivity extends AppCompatActivity {
 
                 startActivity(usuario.getCpf() == null ? new Intent(LoginActivity.this, PrestadorMainActivity.class) : new Intent(LoginActivity.this, ClienteMainActivity.class));
 
-                //SharedPreferences mSharedPreference = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
-                //prefMusic = (mSharedPreference.getBoolean("prefMusic", true));
             }
             else
                 Toast.makeText(LoginActivity.this, "Nome de usuário ou senha incorretos", Toast.LENGTH_SHORT).show();

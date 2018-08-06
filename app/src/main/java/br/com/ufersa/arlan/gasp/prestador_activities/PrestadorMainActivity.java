@@ -18,7 +18,7 @@ public class PrestadorMainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.BUTTON_PRESTADOR_CADASTRAR_SERVICO, R.id.BUTTON_PRESTADOR_CADASTRAR_FUNCIONARIO, R.id.BUTTON_PRESTADOR_LISTAR_SERVICOS, R.id.BUTTON_PRESTADOR_VOLTAR})
+    @OnClick({R.id.BUTTON_PRESTADOR_CADASTRAR_SERVICO, R.id.BUTTON_PRESTADOR_LISTAR_SERVICOS, R.id.BUTTON_PRESTADOR_VOLTAR})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.BUTTON_PRESTADOR_CADASTRAR_SERVICO:
@@ -26,12 +26,7 @@ public class PrestadorMainActivity extends AppCompatActivity {
                 startActivity(new Intent(PrestadorMainActivity.this, CadastrarServicoActivity.class));
 
                 break;
-            case R.id.BUTTON_PRESTADOR_CADASTRAR_FUNCIONARIO:
 
-                startActivity(new Intent(PrestadorMainActivity.this, CadastrarFuncionarioActivity.class));
-
-
-                break;
             case R.id.BUTTON_PRESTADOR_LISTAR_SERVICOS:
 
                 startActivity(new Intent(PrestadorMainActivity.this, ListarServicosActivity.class));
