@@ -2,9 +2,11 @@ package br.com.ufersa.arlan.gasp.beans;
 
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
+import android.os.Parcel;
+import android.os.Parcelable;
 
 @Entity
-public class Servico {
+public class Servico implements Parcelable {
 
     @PrimaryKey(autoGenerate = true)
     private int id;
@@ -19,6 +21,8 @@ public class Servico {
     private String clienteCPF;
     private String prestadorNome;
     private String prestadorCNPJ;
+
+    public Servico(){};
 
 
     public int getId() {
@@ -116,4 +120,54 @@ public class Servico {
     public void setPrestadorCNPJ(String prestadorCNPJ) {
         this.prestadorCNPJ = prestadorCNPJ;
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+
+        dest.writeInt(id);
+        dest.writeString(produto);
+        dest.writeString(defeito);
+        dest.writeLong(dataEntrada);
+        dest.writeLong(dataSaida);
+        dest.writeString(status);
+        dest.writeString(descricao);
+        dest.writeDouble(valor);
+        dest.writeString(clienteNome);
+        dest.writeString(clienteCPF);
+        dest.writeString(prestadorNome);
+        dest.writeString(prestadorCNPJ);
+
+    }
+
+    protected Servico(Parcel in) {
+        id = in.readInt();
+        produto = in.readString();
+        defeito = in.readString();
+        dataEntrada = in.readLong();
+        dataSaida = in.readLong();
+        status = in.readString();
+        descricao = in.readString();
+        valor = in.readDouble();
+        clienteNome = in.readString();
+        clienteCPF = in.readString();
+        prestadorNome = in.readString();
+        prestadorCNPJ = in.readString();
+    }
+
+    public static final Creator<Servico> CREATOR = new Creator<Servico>() {
+        @Override
+        public Servico createFromParcel(Parcel in) {
+            return new Servico(in);
+        }
+
+        @Override
+        public Servico[] newArray(int size) {
+            return new Servico[size];
+        }
+    };
 }
