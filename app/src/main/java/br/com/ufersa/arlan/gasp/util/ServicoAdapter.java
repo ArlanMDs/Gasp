@@ -39,6 +39,7 @@ public class ServicoAdapter extends RecyclerView.Adapter<ServicoAdapter.ViewHold
     public void onBindViewHolder(@NonNull ServicoAdapter.ViewHolder holder, final int position) {
 
         holder.servicoClienteNome.setText(servicos.get(position).getClienteNome());
+        holder.servicoStatus.setText(servicos.get(position).getStatus());
         holder.servicoDate.setText(longToDateFormat(servicos.get(position).getDataEntrada()));
         // o listener passa o ID da amostra selecionada para a activity de detalhes
         holder.parentLayout.setOnClickListener(new View.OnClickListener() {
@@ -67,6 +68,7 @@ public class ServicoAdapter extends RecyclerView.Adapter<ServicoAdapter.ViewHold
     class ViewHolder extends RecyclerView.ViewHolder{
         private final TextView servicoClienteNome;
         private final TextView servicoDate;
+        private final TextView servicoStatus;
         final ConstraintLayout parentLayout;
 
         ViewHolder(View itemView){
@@ -74,6 +76,7 @@ public class ServicoAdapter extends RecyclerView.Adapter<ServicoAdapter.ViewHold
             servicoClienteNome = itemView.findViewById(R.id.TEXTVIEW_SERVICO_NOME_CLIENTE);
             parentLayout = itemView.findViewById(R.id.LAYOUT_SERVICO_ROW);
             servicoDate = itemView.findViewById(R.id.TEXTVIEW_SERVICO_DATE);
+            servicoStatus = itemView.findViewById(R.id.TEXTVIEW_SERVICO_STATUS);
 
         }
     }

@@ -31,26 +31,16 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView16"
+            android:id="@+id/textView17"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="32dp"
-            android:text="Serviço"
+            android:layout_marginTop="24dp"
+            android:text="Nome do cliente"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView14" />
-
-        <TextView
-            android:id="@+id/textView17"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="Nome do cliente"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="@+id/textView16"
-            app:layout_constraintTop_toBottomOf="@+id/textView16" />
 
         <TextView
             android:id="@+id/textView18"
@@ -93,7 +83,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textView36" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/MODIFICAR_SERVICO_BOTAO_ALTERAR"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="148dp"
@@ -107,7 +97,7 @@
             app:layout_constraintTop_toBottomOf="@+id/MODIFICAR_SERVICO_DESCRICAO" />
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/MODIFICAR_SERVICO_BOTAO_VOLTAR"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
@@ -116,19 +106,9 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:text="Voltar"
-            app:layout_constraintEnd_toEndOf="@+id/button"
-            app:layout_constraintStart_toStartOf="@+id/button"
-            app:layout_constraintTop_toBottomOf="@+id/button" />
-
-        <TextView
-            android:id="@+id/STATUS_SERVICO"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            android:layout_marginStart="8dp"
-            android:text="TextView"
-            app:layout_constraintStart_toEndOf="@+id/textView16"
-            app:layout_constraintTop_toTopOf="@+id/textView16" />
+            app:layout_constraintEnd_toEndOf="@+id/MODIFICAR_SERVICO_BOTAO_ALTERAR"
+            app:layout_constraintStart_toStartOf="@+id/MODIFICAR_SERVICO_BOTAO_ALTERAR"
+            app:layout_constraintTop_toBottomOf="@+id/MODIFICAR_SERVICO_BOTAO_ALTERAR" />
 
         <TextView
             android:id="@+id/MODIFICAR_SERVICO_DESCRICAO"
@@ -142,7 +122,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textView21" />
 
         <TextView
-            android:id="@+id/MODIFICAR_SERVICO_NOME_FUNCIONARIO"
+            android:id="@+id/MODIFICAR_SERVICO_NOME_CLIENTE"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"

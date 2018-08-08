@@ -183,18 +183,19 @@ public class CadastrarServicoActivity extends AppCompatActivity {
             String prestadorCpf = (mSharedPreference.getString("usuarioAtivoID", "error"));
             String prestadorNome = (mSharedPreference.getString("usuarioAtivoNome", "error"));
 
-            Servico servico = new Servico();
+            Servico servico = new Servico.ServicoBuilder()
+                    .setDataEntrada(dataEntrada)
+                    .setDefeito(CADASTRARSERVICODEFEITO.getText().toString())
+                    .setProduto(CADASTRARSERVICOPRODUTO.getText().toString())
+                    .setPrestadorCNPJ(prestadorCpf)
+                    .setPrestadorNome(prestadorNome)
+                    .setClienteCPF(CADASTRARSERVICOCPF.getText().toString()) // TODO fonte de bugs... se o usuário alterar depois da busca, dá ruim...
+                    .setClienteNome(CADASTRARSERVICONOMECLIENTE.getText().toString())
+                    .setStatus(getString(R.string.avaliacao))
+                    .createServico();
 
-            servico.setDataEntrada(dataEntrada);
-            servico.setDefeito(CADASTRARSERVICODEFEITO.getText().toString());
-            servico.setProduto(CADASTRARSERVICOPRODUTO.getText().toString());
-            servico.setPrestadorCNPJ(prestadorCpf);
-            servico.setPrestadorNome(prestadorNome);
-            servico.setClienteCPF(CADASTRARSERVICOCPF.getText().toString()); // TODO fonte de bugs... se o usuário alterar depois da busca, dá ruim...
-            servico.setClienteNome(CADASTRARSERVICONOMECLIENTE.getText().toString());
-            servico.setStatus(getString(R.string.avaliacao));
-
-            appDatabase.servicoDao().insert(servico);
+            appDatabase.servicoDao()
+                    .insert(servico);
             return null;
         }
 

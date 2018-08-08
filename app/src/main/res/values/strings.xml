@@ -14,8 +14,8 @@
         <item>Finalizado</item>
 
     </string-array>
-    <string name="avaliacao">Avaliação</string>
-    <string name="conserto">Conserto</string>
+    <string name="avaliacao">Em avaliação</string>
+    <string name="conserto">Em conserto</string>
     <string name="aguardando">Aguardando confirmação do cliente</string>
     <string name="finalizado">Finalizado</string>
 

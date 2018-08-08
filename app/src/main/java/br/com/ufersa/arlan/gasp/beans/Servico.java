@@ -22,8 +22,34 @@ public class Servico implements Parcelable {
     private String prestadorNome;
     private String prestadorCNPJ;
 
-    public Servico(){};
+    // construtor para o room
+    public Servico(String produto, String defeito, long dataEntrada, long dataSaida, String status, String descricao, double valor, String clienteNome, String clienteCPF, String prestadorNome, String prestadorCNPJ) {
+        this.produto = produto;
+        this.defeito = defeito;
+        this.dataEntrada = dataEntrada;
+        this.dataSaida = dataSaida;
+        this.status = status;
+        this.descricao = descricao;
+        this.valor = valor;
+        this.clienteNome = clienteNome;
+        this.clienteCPF = clienteCPF;
+        this.prestadorNome = prestadorNome;
+        this.prestadorCNPJ = prestadorCNPJ;
+    }
 
+    private Servico(final ServicoBuilder builder) {
+        produto = builder.produto;
+        defeito = builder.defeito;
+        dataEntrada = builder.dataEntrada;
+        dataSaida = builder.dataSaida;
+        status = builder.status;
+        descricao = builder.descricao;
+        valor = builder.valor;
+        clienteNome = builder.clienteNome;
+        clienteCPF = builder.clienteCPF;
+        prestadorNome = builder.prestadorNome;
+        prestadorCNPJ = builder.prestadorCNPJ;
+    }
 
     public int getId() {
         return id;
@@ -37,88 +63,44 @@ public class Servico implements Parcelable {
         return produto;
     }
 
-    public void setProduto(String produto) {
-        this.produto = produto;
-    }
-
     public String getDefeito() {
         return defeito;
-    }
-
-    public void setDefeito(String defeito) {
-        this.defeito = defeito;
     }
 
     public long getDataEntrada() {
         return dataEntrada;
     }
 
-    public void setDataEntrada(long dataEntrada) {
-        this.dataEntrada = dataEntrada;
-    }
-
     public long getDataSaida() {
         return dataSaida;
-    }
-
-    public void setDataSaida(long dataSaida) {
-        this.dataSaida = dataSaida;
     }
 
     public String getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
     public String getDescricao() {
         return descricao;
-    }
-
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
     }
 
     public double getValor() {
         return valor;
     }
 
-    public void setValor(double valor) {
-        this.valor = valor;
-    }
-
     public String getClienteNome() {
         return clienteNome;
-    }
-
-    public void setClienteNome(String cliente) {
-        this.clienteNome = cliente;
-    }
-
-    public String getPrestadorNome() {
-        return prestadorNome;
-    }
-
-    public void setPrestadorNome(String prestador) {
-        this.prestadorNome = prestador;
     }
 
     public String getClienteCPF() {
         return clienteCPF;
     }
 
-    public void setClienteCPF(String clienteCPF) {
-        this.clienteCPF = clienteCPF;
+    public String getPrestadorNome() {
+        return prestadorNome;
     }
 
     public String getPrestadorCNPJ() {
         return prestadorCNPJ;
-    }
-
-    public void setPrestadorCNPJ(String prestadorCNPJ) {
-        this.prestadorCNPJ = prestadorCNPJ;
     }
 
     @Override
@@ -170,4 +152,77 @@ public class Servico implements Parcelable {
             return new Servico[size];
         }
     };
+
+    public static class ServicoBuilder {
+        private String produto;
+        private String defeito;
+        private long dataEntrada;
+        private long dataSaida;
+        private String status;
+        private String descricao;
+        private double valor;
+        private String clienteNome;
+        private String clienteCPF;
+        private String prestadorNome;
+        private String prestadorCNPJ;
+
+        public ServicoBuilder setProduto(String produto) {
+            this.produto = produto;
+            return this;
+        }
+
+        public ServicoBuilder setDefeito(String defeito) {
+            this.defeito = defeito;
+            return this;
+        }
+
+        public ServicoBuilder setDataEntrada(long dataEntrada) {
+            this.dataEntrada = dataEntrada;
+            return this;
+        }
+
+        public ServicoBuilder setDataSaida(long dataSaida) {
+            this.dataSaida = dataSaida;
+            return this;
+        }
+
+        public ServicoBuilder setStatus(String status) {
+            this.status = status;
+            return this;
+        }
+
+        public ServicoBuilder setDescricao(String descricao) {
+            this.descricao = descricao;
+            return this;
+        }
+
+        public ServicoBuilder setValor(double valor) {
+            this.valor = valor;
+            return this;
+        }
+
+        public ServicoBuilder setClienteNome(String clienteNome) {
+            this.clienteNome = clienteNome;
+            return this;
+        }
+
+        public ServicoBuilder setClienteCPF(String clienteCPF) {
+            this.clienteCPF = clienteCPF;
+            return this;
+        }
+
+        public ServicoBuilder setPrestadorNome(String prestadorNome) {
+            this.prestadorNome = prestadorNome;
+            return this;
+        }
+
+        public ServicoBuilder setPrestadorCNPJ(String prestadorCNPJ) {
+            this.prestadorCNPJ = prestadorCNPJ;
+            return this;
+        }
+
+        public Servico createServico() {
+            return new Servico(this);
+        }
+    }
 }

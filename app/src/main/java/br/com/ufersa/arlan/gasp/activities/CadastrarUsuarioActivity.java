@@ -49,7 +49,7 @@ public class CadastrarUsuarioActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         //prepara o bd
         appDatabase = AppDatabase.getInstance(CadastrarUsuarioActivity.this);
-        usuario = new Usuario();
+        //usuario = new UsuarioBuilder().createUsuario();
 
     }
 
@@ -57,20 +57,26 @@ public class CadastrarUsuarioActivity extends AppCompatActivity {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.CADASTRAR_USUARIO_CONFIRMAR:
+                String cpf = null;
+                String cnpj = null;
 
                 if (validaDados()) {
                     // Os dados estão ok. pronto para criar o objeto e inserir no banco
 
-                    if (CADASTRARUSUARIOSPINNER.getSelectedItemPosition() == 0) // é cliente
-                        usuario.setCpf(String.valueOf(CADASTRARUSUARIOCPF.getText()));
+                    if (CADASTRARUSUARIOSPINNER.getSelectedItemPosition() == 0)
+                        cpf = (String.valueOf(CADASTRARUSUARIOCPF.getText()));
+                    else
+                        cnpj = (String.valueOf(CADASTRARUSUARIOCPF.getText()));
 
-                    else // insere como prestador
-                        usuario.setCnpj(String.valueOf(CADASTRARUSUARIOCPF.getText()));
+                        usuario = new Usuario.UsuarioBuilder()
+                                .setCpf(cpf)
+                                .setCnpj(cnpj)
+                                .setEmail(String.valueOf(CADASTARUSUARIOEMAIL.getText()))
+                                .setNome(String.valueOf(CADASTRARUSUARIONAME.getText()))
+                                .setSenha(String.valueOf(CADASTRARUSUARIOSENHA.getText()))
+                                .setTelefone(String.valueOf(CADASTRARUSUARIOTELEFONE.getText()))
+                                .createUsuario();
 
-                    usuario.setEmail(String.valueOf(CADASTARUSUARIOEMAIL.getText()));
-                    usuario.setNome(String.valueOf(CADASTRARUSUARIONAME.getText()));
-                    usuario.setSenha(String.valueOf(CADASTRARUSUARIOSENHA.getText()));
-                    usuario.setTelefone(String.valueOf(CADASTRARUSUARIOTELEFONE.getText()));
 
                     new AsyncInsert().execute();
                 }
