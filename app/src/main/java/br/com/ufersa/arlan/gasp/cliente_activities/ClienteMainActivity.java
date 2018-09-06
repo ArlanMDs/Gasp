@@ -18,20 +18,16 @@ public class ClienteMainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.CLIENTE_SERVICOS_ABERTOS, R.id.CLIENTE_SERVICOS_FINALIZADOS, R.id.CLIENTE_VOLTAR})
+    @OnClick({R.id.CLIENTE_SERVICOS, R.id.CLIENTE_VOLTAR})
     public void onViewClicked(View view) {
         switch (view.getId()) {
-            case R.id.CLIENTE_SERVICOS_ABERTOS:
+            case R.id.CLIENTE_SERVICOS:
 
-                startActivity( new Intent(ClienteMainActivity.this, ServicosAbertosActivity.class));
+                startActivity( new Intent(ClienteMainActivity.this, ListarServicosClienteActivity.class));
 
-
-                break;
-            case R.id.CLIENTE_SERVICOS_FINALIZADOS:
-
-                startActivity( new Intent(ClienteMainActivity.this, ServicosFinalizadosActivity.class));
 
                 break;
+
             case R.id.CLIENTE_VOLTAR:
 
                 finish();

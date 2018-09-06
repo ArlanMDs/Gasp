@@ -29,7 +29,7 @@ public class PrestadorMainActivity extends AppCompatActivity {
 
             case R.id.BUTTON_PRESTADOR_LISTAR_SERVICOS:
 
-                startActivity(new Intent(PrestadorMainActivity.this, ListarServicosActivity.class));
+                startActivity(new Intent(PrestadorMainActivity.this, ListarServicosPrestadorActivity.class));
 
                 break;
             case R.id.BUTTON_PRESTADOR_VOLTAR:

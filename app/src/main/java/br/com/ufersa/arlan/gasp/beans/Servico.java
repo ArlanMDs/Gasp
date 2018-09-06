@@ -103,6 +103,50 @@ public class Servico implements Parcelable {
         return prestadorCNPJ;
     }
 
+    public void setProduto(String produto) {
+        this.produto = produto;
+    }
+
+    public void setDefeito(String defeito) {
+        this.defeito = defeito;
+    }
+
+    public void setDataEntrada(long dataEntrada) {
+        this.dataEntrada = dataEntrada;
+    }
+
+    public void setDataSaida(long dataSaida) {
+        this.dataSaida = dataSaida;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public void setValor(double valor) {
+        this.valor = valor;
+    }
+
+    public void setClienteNome(String clienteNome) {
+        this.clienteNome = clienteNome;
+    }
+
+    public void setClienteCPF(String clienteCPF) {
+        this.clienteCPF = clienteCPF;
+    }
+
+    public void setPrestadorNome(String prestadorNome) {
+        this.prestadorNome = prestadorNome;
+    }
+
+    public void setPrestadorCNPJ(String prestadorCNPJ) {
+        this.prestadorCNPJ = prestadorCNPJ;
+    }
+
     @Override
     public int describeContents() {
         return 0;

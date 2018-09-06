@@ -16,27 +16,29 @@ import java.util.List;
 
 import br.com.ufersa.arlan.gasp.R;
 import br.com.ufersa.arlan.gasp.beans.Servico;
-import br.com.ufersa.arlan.gasp.prestador_activities.ModificarServicoActivity;
+import br.com.ufersa.arlan.gasp.prestador_activities.ModificarServicoPrestadorActivity;
 
-public class ServicoAdapter extends RecyclerView.Adapter<ServicoAdapter.ViewHolder>{
+public class ServicoPrestadorAdapter extends RecyclerView.Adapter<ServicoPrestadorAdapter.ViewHolder>{
 
     private final List<Servico> servicos;
     private final Context context;
 
-    public ServicoAdapter(Context context, List<Servico> servicos) {
+    public ServicoPrestadorAdapter(Context context, List<Servico> servicos) {
         this.servicos = servicos;
         this.context = context;
     }
 
     @NonNull
     @Override
-    public ServicoAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.servico_row, parent, false);
-        return new ServicoAdapter.ViewHolder(view);
+    public ServicoPrestadorAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.servico_prestador_row, parent, false);
+        return new ServicoPrestadorAdapter.ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ServicoAdapter.ViewHolder holder, final int position) {
+    public void onBindViewHolder(@NonNull ServicoPrestadorAdapter.ViewHolder holder, final int position) {
+
+
 
         holder.servicoClienteNome.setText(servicos.get(position).getClienteNome());
         holder.servicoStatus.setText(servicos.get(position).getStatus());
@@ -46,7 +48,7 @@ public class ServicoAdapter extends RecyclerView.Adapter<ServicoAdapter.ViewHold
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(context, ModificarServicoActivity.class);
+                Intent intent = new Intent(context, ModificarServicoPrestadorActivity.class);
                 intent.putExtra("servico", servicos.get(position));
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);//app deu crash, o log do erro pediu essa flag.
                 context.startActivity(intent);
@@ -74,7 +76,7 @@ public class ServicoAdapter extends RecyclerView.Adapter<ServicoAdapter.ViewHold
         ViewHolder(View itemView){
             super(itemView);
             servicoClienteNome = itemView.findViewById(R.id.TEXTVIEW_SERVICO_NOME_CLIENTE);
-            parentLayout = itemView.findViewById(R.id.LAYOUT_SERVICO_ROW);
+            parentLayout = itemView.findViewById(R.id.LAYOUT_SERVICO_PRESTADOR_ROW);
             servicoDate = itemView.findViewById(R.id.TEXTVIEW_SERVICO_DATE);
             servicoStatus = itemView.findViewById(R.id.TEXTVIEW_SERVICO_STATUS);
 

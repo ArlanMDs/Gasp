@@ -27,7 +27,7 @@ public abstract class AppDatabase extends RoomDatabase {
                 context,
                 AppDatabase.class,
                 DB_NAME)
-                .fallbackToDestructiveMigration()// esse método destroi a bd antigo se a versão mudar. //TODO fazer métodos de migração quando necessário
+                .fallbackToDestructiveMigration()// esse método destroi a bd antigo se a versão mudar.
                 .build();
     }
 

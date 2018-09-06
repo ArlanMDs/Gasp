@@ -1,20 +1,20 @@
-package br.com.ufersa.arlan.gasp.prestador_activities;
+package br.com.ufersa.arlan.gasp.cliente_activities;
 
 import android.os.AsyncTask;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.View;
 
 import java.util.List;
 
 import br.com.ufersa.arlan.gasp.R;
 import br.com.ufersa.arlan.gasp.beans.Servico;
 import br.com.ufersa.arlan.gasp.database.AppDatabase;
-import br.com.ufersa.arlan.gasp.util.ServicoAdapter;
+import br.com.ufersa.arlan.gasp.util.ServicoClienteAdapter;
+import br.com.ufersa.arlan.gasp.util.ServicoPrestadorAdapter;
 
-public class ListarServicosActivity extends AppCompatActivity {
+public class ListarServicosClienteActivity extends AppCompatActivity {
 
 
     private RecyclerView recyclerView;
@@ -23,13 +23,13 @@ public class ListarServicosActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_listar_servicos);
+        setContentView(R.layout.activity_listar_servicos_cliente);
 
-        recyclerView = findViewById(R.id.SERVICO_RECYCLER_VIEW);
-        recyclerView.setLayoutManager(new LinearLayoutManager(ListarServicosActivity.this));
+        recyclerView = findViewById(R.id.SERVICO_CLIENTE_RECYCLER_VIEW);
+        recyclerView.setLayoutManager(new LinearLayoutManager(ListarServicosClienteActivity.this));
 
         //prepara o bd
-        appDatabase = AppDatabase.getInstance(ListarServicosActivity.this);
+        appDatabase = AppDatabase.getInstance(ListarServicosClienteActivity.this);
 
 
         // Popula a lista
@@ -52,7 +52,7 @@ public class ListarServicosActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(List<Servico> servicos) {
-            RecyclerView.Adapter adapter = new ServicoAdapter(ListarServicosActivity.this, servicos);
+            RecyclerView.Adapter adapter = new ServicoClienteAdapter(ListarServicosClienteActivity.this, servicos);
             recyclerView.setAdapter(adapter);
 
         }

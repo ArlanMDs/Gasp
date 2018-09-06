@@ -177,6 +177,12 @@ public class CadastrarServicoActivity extends AppCompatActivity {
 
         @Override
         protected Void doInBackground(Void... voids) {
+            //ordem do array de status
+            //        <item>Em avaliação</item>
+            //        <item>Em conserto</item>
+            //        <item>Aguardando confirmação do cliente</item>
+            //        <item>Finalizado</item>
+            //
 
             // busca as credenciais do prestador logado
             SharedPreferences mSharedPreference = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
@@ -191,7 +197,7 @@ public class CadastrarServicoActivity extends AppCompatActivity {
                     .setPrestadorNome(prestadorNome)
                     .setClienteCPF(CADASTRARSERVICOCPF.getText().toString()) // TODO fonte de bugs... se o usuário alterar depois da busca, dá ruim...
                     .setClienteNome(CADASTRARSERVICONOMECLIENTE.getText().toString())
-                    .setStatus(getString(R.string.avaliacao))
+                    .setStatus("Em avaliação")
                     .createServico();
 
             appDatabase.servicoDao()
